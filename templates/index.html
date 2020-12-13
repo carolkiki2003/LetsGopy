@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Go!</title>
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+</head>
+<body>
+    <h1>就是現在!找個好天氣好地點出遊吧</h1>
+    {% if name == "" %}
+    <form method="post">
+        <div class="selectArea">
+            <p>請選擇縣市：</p>
+            <select name="city" id="">
+                <option value="" disabled selected hidden>縣市</option>
+                <option value="臺北市">臺北市</option>
+                <option value="新北市">新北市</option>
+                <option value="桃園市">桃園市</option>
+                <option value="新竹市">新竹市</option>
+                <option value="新竹縣">新竹縣</option>
+                <option value="苗栗縣">苗栗縣</option>
+                <option value="臺中市">臺中市</option>
+                <option value="南投縣">南投縣</option>
+                <option value="嘉義縣">嘉義縣</option>
+                <option value="高雄市">高雄市</option>
+                <option value="屏東縣">屏東縣</option>
+                <option value="宜蘭縣">宜蘭縣</option>
+                <option value="花蓮縣">花蓮縣</option>
+            </select>
+        </div>
+        <div class="selectArea">
+        <p>請選擇降雨機率：</p>
+        <select name="percent" id="">
+            <option value="" disabled selected hidden>降雨機率</option>
+            <option value="0％">0%</option>
+            <option value="10％">10％以下</option>
+            <option value="20％">20％以下</option>
+            <option value="30％">30％以下</option>
+            <option value="40％">40％以下</option>
+            <option value="50％">50％以下</option>
+            <option value="60％">60％以下</option>
+            <option value="70％">70％以下</option>
+            <option value="80％">80％以下</option>
+            <option value="90％">90％以下</option>
+            <option value="100％">100％以下</option>
+        </select>
+        </div>
+        <input type="submit" name="send" value="送出">
+    </form>
+    {% else %}
+    <p>Hello,{{name}}</p>
+    {% endif %}
+</body>
+</html>
