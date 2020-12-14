@@ -8,7 +8,10 @@
 </head>
 <body>
     <h1>就是現在!找個好天氣好地點出遊吧</h1>
-    {% if name == "" %}
+    <div>
+        <img src="../七星山_1/2020-05-13_14-39-56_UTC.jpg" alt="">
+        <p></p>
+    </div>
     <form method="post">
         <div class="selectArea">
             <p>請選擇縣市：</p>
@@ -48,6 +51,8 @@
         </div>
         <input type="submit" name="send" value="送出">
     </form>
+    {% if name == "" %}
+    <p>請完成選擇</p>
     {% else %}
     <p>Hello,{{name}}</p>
     {% endif %}
