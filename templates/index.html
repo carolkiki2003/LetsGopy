@@ -3,58 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Let's Go!</title>
-    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <title>出遊趣</title>
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/style/style.css">
 </head>
 <body>
-    <h1>就是現在!找個好天氣好地點出遊吧</h1>
-    <div>
-        <img width="200" src="static/七星山_1/2020-05-13_14-39-56_UTC.jpg.jpg" alt="">
-        <p></p>
+    <div id="goHiking">
+        <h1>出遊趣</h1>
+        <form method="post">
+            <div class="selectSection">
+                <div class="selectOption">
+                    <p>請選擇縣市：</p>
+                    <select name="city" id="">
+                        <option value="" disabled selected hidden>縣市</option>
+                        <option value="臺北市">臺北市</option>
+                        <option value="新北市">新北市</option>
+                        <option value="桃園市">桃園市</option>
+                        <option value="新竹市">新竹市</option>
+                        <option value="新竹縣">新竹縣</option>
+                        <option value="苗栗縣">苗栗縣</option>
+                        <option value="臺中市">臺中市</option>
+                        <option value="南投縣">南投縣</option>
+                        <option value="嘉義縣">嘉義縣</option>
+                        <option value="高雄市">高雄市</option>
+                        <option value="屏東縣">屏東縣</option>
+                        <option value="宜蘭縣">宜蘭縣</option>
+                        <option value="花蓮縣">花蓮縣</option>
+                    </select>
+                </div>
+                <div class="selectOption">
+                    <p>請選擇降雨機率：</p>
+                    <select name="percent" id="">
+                        <option value="" disabled selected hidden>降雨機率</option>
+                        <option value="0％">0%</option>
+                        <option value="10％">10％以下</option>
+                        <option value="20％">20％以下</option>
+                        <option value="30％">30％以下</option>
+                        <option value="40％">40％以下</option>
+                        <option value="50％">50％以下</option>
+                        <option value="60％">60％以下</option>
+                        <option value="70％">70％以下</option>
+                        <option value="80％">80％以下</option>
+                        <option value="90％">90％以下</option>
+                        <option value="100％">100％以下</option>
+                    </select>
+                </div>
+                <input type="submit" name="send" value="送出">
+            </div>
+        </form>
+        {% if name == "" %}
+        <p class="aLine">請完成篩選</p>
+        {% else %}
+        <div class="result_content">
+            <p class="result_txt">以下為從<a href="https://www.cwb.gov.tw/V8/C/L/Mountain/Mountain.html" target="_blank" rel="noopener noreferrer">{{name}}</a>搜尋符合條件<span>{{city}}</span>和降雨機率為<span>{{percent}}</span>以下的推薦地點：</p>
+            <p class="tags"><span class="tag">七星山</span><span class="tag">七星山</span><span class="tag">七星山</span><span class="tag">七星山</span><span class="tag">七星山</span></p>
+            <section class="location_section">
+                <h3>七星山</h3>
+                <p>氣溫:10度 | 舒適度:適宜</p>
+                <div class="ig_section">
+                    <p class="title">ig熱門貼文</p>
+                   <div class="ig_imgs">
+                       <div class="ig_img">
+                            <img class="ig_logo" src="/static/ig_logo.png" alt="">
+                           <div class="img_box">
+                                <img src="/static/1.jpg" alt="">
+                           </div>
+                            <p>成功再解鎖一座山✔️<br>帶著曬傷滿足的回台中☺️<br>(當天爆多蚊蟲昆蟲各種會飛的生物聚集在這，邊拍照邊崩潰抖身體那種，認真母湯<br>
+                                <span>📍#七星山 </span>
+                                <span>#那些在台中的日常 </span>
+                                <span>#gohiking#outdoorlife#bpintaiwan#vscotaiwan#taiwanformosa#amazingtaiwan#igerstaiwan#iseetaiwan#popdaily#taipeitravel#wowtoplay#台北#台北景點</span>
+                                <span class="date">109-05-10</span>
+                            </p>
+                        </div>
+                        <div class="ig_img">
+                            <img class="ig_logo" src="/static/ig_logo.png" alt="">
+                            <div class="img_box">
+                             <img src="/static/2.jpg" alt="">
+                            </div>
+                            <p>成功再解鎖一座山✔️<br>帶著曬傷滿足的回台中☺️<br>(當天爆多蚊蟲昆蟲各種會飛的生物聚集在這，邊拍照邊崩潰抖身體那種，認真母湯<br>
+                                <span>📍#七星山 </span>
+                                <span>#那些在台中的日常 </span>
+                                <span>#gohiking#outdoorlife#bpintaiwan#vscotaiwan#taiwanformosa#amazingtaiwan#igerstaiwan#iseetaiwan#popdaily#taipeitravel#wowtoplay#台北#台北景點</span>
+                                <span class="date">109-05-10</span>
+                            </p>
+                         </div>
+                         <div class="ig_img">
+                            <img class="ig_logo" src="/static/ig_logo.png" alt="">
+                            <div class="img_box">
+                             <img src="/static/3.jpg" alt="">
+                            </div>
+                            <p>成功再解鎖一座山✔️<br>帶著曬傷滿足的回台中☺️<br>(當天爆多蚊蟲昆蟲各種會飛的生物聚集在這，邊拍照邊崩潰抖身體那種，認真母湯<br>
+                                <span>📍#七星山 </span>
+                                <span>#那些在台中的日常 </span>
+                                <span>#gohiking#outdoorlife#bpintaiwan#vscotaiwan#taiwanformosa#amazingtaiwan#igerstaiwan#iseetaiwan#popdaily#taipeitravel#wowtoplay#台北#台北景點</span>
+                                <span class="date">109-05-10</span>
+                            </p>
+                         </div>
+                         <div class="ig_img">
+                            <img class="ig_logo" src="/static/ig_logo.png" alt="">
+                            <div class="img_box">
+                             <img src="/static/4.jpg" alt="">
+                            </div>
+                            <p>成功再解鎖一座山✔️<br>帶著曬傷滿足的回台中☺️<br>(當天爆多蚊蟲昆蟲各種會飛的生物聚集在這，邊拍照邊崩潰抖身體那種，認真母湯<br>
+                                <span>📍#七星山 </span>
+                                <span>#那些在台中的日常 </span>
+                                <span>#gohiking#outdoorlife#bpintaiwan#vscotaiwan#taiwanformosa#amazingtaiwan#igerstaiwan#iseetaiwan#popdaily#taipeitravel#wowtoplay#台北#台北景點</span>
+                                <span class="date">109-05-10</span>
+                            </p>
+                         </div>
+                         <div class="ig_img">
+                            <img class="ig_logo" src="/static/ig_logo.png" alt="">
+                            <div class="img_box">
+                             <img src="/static/5.jpg" alt="">
+                            </div>
+                            <p>成功再解鎖一座山✔️<br>帶著曬傷滿足的回台中☺️<br>(當天爆多蚊蟲昆蟲各種會飛的生物聚集在這，邊拍照邊崩潰抖身體那種，認真母湯<br>
+                                <span>📍#七星山 </span>
+                                <span>#那些在台中的日常 </span>
+                                <span>#gohiking#outdoorlife#bpintaiwan#vscotaiwan#taiwanformosa#amazingtaiwan#igerstaiwan#iseetaiwan#popdaily#taipeitravel#wowtoplay#台北#台北景點</span>
+                                <span class="date">109-05-10</span>
+                            </p>
+                         </div>
+                   </div>
+                </div>
+                <div class="article_section">
+                    <p class="title">健行筆記相關文章</p>
+                    <div class="hiking_articles">
+                        <div class="hiking_article">
+                            <img src="/static/hikingImg.jpg" alt="">
+                            <div class="txt_box">
+                                <p>認識 Tzou 後 對他的登山哲學深深著迷 某種程度受他影響相當大  鬼行黑客 ： 一個人的一日聖稜 by 鄒仔
+                                    享受琢磨他文字的同時 開始嚮往追求自由的靈魂 
+                                    契機來自於 加強版一個人的陽明山東西大縱走 之後與 Tzou 有了交流
+                                    在他的鼓勵 踏上一日奇萊主北 或 一日雪山北峰 甚至 一日南湖大山
+                                    卻始終沒能真正踏上 或真正走完這神聖的稜線
+                                    隨著相關單位的進步 自我接泊也因為加州的購入得以實現 始踏上這意中的旅程 Garmin Connect 記錄
+                                </p>
+                            </div>
+                        </div>
+                        <div class="hiking_article">
+                            <img src="/static/hikingImg.jpg" alt="">
+                            <div class="txt_box">
+                                <p>認識 Tzou 後 對他的登山哲學深深著迷 某種程度受他影響相當大  鬼行黑客 ： 一個人的一日聖稜 by 鄒仔
+                                    享受琢磨他文字的同時 開始嚮往追求自由的靈魂 
+                                    契機來自於 加強版一個人的陽明山東西大縱走 之後與 Tzou 有了交流
+                                    在他的鼓勵 踏上一日奇萊主北 或 一日雪山北峰 甚至 一日南湖大山
+                                    卻始終沒能真正踏上 或真正走完這神聖的稜線
+                                    隨著相關單位的進步 自我接泊也因為加州的購入得以實現 始踏上這意中的旅程 Garmin Connect 記錄
+                                </p>
+                            </div>
+                        </div>
+                        <div class="hiking_article">
+                            <img src="/static/hikingImg.jpg" alt="">
+                            <div class="txt_box">
+                                <p>認識 Tzou 後 對他的登山哲學深深著迷 某種程度受他影響相當大  鬼行黑客 ： 一個人的一日聖稜 by 鄒仔
+                                    享受琢磨他文字的同時 開始嚮往追求自由的靈魂 
+                                    契機來自於 加強版一個人的陽明山東西大縱走 之後與 Tzou 有了交流
+                                    在他的鼓勵 踏上一日奇萊主北 或 一日雪山北峰 甚至 一日南湖大山
+                                    卻始終沒能真正踏上 或真正走完這神聖的稜線
+                                    隨著相關單位的進步 自我接泊也因為加州的購入得以實現 始踏上這意中的旅程 Garmin Connect 記錄
+                                </p>
+                            </div>
+                        </div>
+                        <div class="hiking_article">
+                            <img src="/static/hikingImg.jpg" alt="">
+                            <div class="txt_box">
+                                <p>認識 Tzou 後 對他的登山哲學深深著迷 某種程度受他影響相當大  鬼行黑客 ： 一個人的一日聖稜 by 鄒仔
+                                    享受琢磨他文字的同時 開始嚮往追求自由的靈魂 
+                                    契機來自於 加強版一個人的陽明山東西大縱走 之後與 Tzou 有了交流
+                                    在他的鼓勵 踏上一日奇萊主北 或 一日雪山北峰 甚至 一日南湖大山
+                                    卻始終沒能真正踏上 或真正走完這神聖的稜線
+                                    隨著相關單位的進步 自我接泊也因為加州的購入得以實現 始踏上這意中的旅程 Garmin Connect 記錄
+                                </p>
+                            </div>
+                        </div>
+                        <div class="hiking_article">
+                            <img src="/static/hikingImg.jpg" alt="">
+                            <div class="txt_box">
+                                <p>認識 Tzou 後 對他的登山哲學深深著迷 某種程度受他影響相當大  鬼行黑客 ： 一個人的一日聖稜 by 鄒仔
+                                    享受琢磨他文字的同時 開始嚮往追求自由的靈魂 
+                                    契機來自於 加強版一個人的陽明山東西大縱走 之後與 Tzou 有了交流
+                                    在他的鼓勵 踏上一日奇萊主北 或 一日雪山北峰 甚至 一日南湖大山
+                                    卻始終沒能真正踏上 或真正走完這神聖的稜線
+                                    隨著相關單位的進步 自我接泊也因為加州的購入得以實現 始踏上這意中的旅程 Garmin Connect 記錄
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        {% endif %}
     </div>
-    <form method="post">
-        <div class="selectArea">
-            <p>請選擇縣市：</p>
-            <select name="city" id="">
-                <option value="" disabled selected hidden>縣市</option>
-                <option value="臺北市">臺北市</option>
-                <option value="新北市">新北市</option>
-                <option value="桃園市">桃園市</option>
-                <option value="新竹市">新竹市</option>
-                <option value="新竹縣">新竹縣</option>
-                <option value="苗栗縣">苗栗縣</option>
-                <option value="臺中市">臺中市</option>
-                <option value="南投縣">南投縣</option>
-                <option value="嘉義縣">嘉義縣</option>
-                <option value="高雄市">高雄市</option>
-                <option value="屏東縣">屏東縣</option>
-                <option value="宜蘭縣">宜蘭縣</option>
-                <option value="花蓮縣">花蓮縣</option>
-            </select>
-        </div>
-        <div class="selectArea">
-        <p>請選擇降雨機率：</p>
-        <select name="percent" id="">
-            <option value="" disabled selected hidden>降雨機率</option>
-            <option value="0％">0%</option>
-            <option value="10％">10％以下</option>
-            <option value="20％">20％以下</option>
-            <option value="30％">30％以下</option>
-            <option value="40％">40％以下</option>
-            <option value="50％">50％以下</option>
-            <option value="60％">60％以下</option>
-            <option value="70％">70％以下</option>
-            <option value="80％">80％以下</option>
-            <option value="90％">90％以下</option>
-            <option value="100％">100％以下</option>
-        </select>
-        </div>
-        <input type="submit" name="send" value="送出">
-    </form>
-    {% if name == "" %}
-    <p>請完成選擇</p>
-    {% else %}
-    <p>Hello,{{name}}</p>
-    {% endif %}
 </body>
 </html>

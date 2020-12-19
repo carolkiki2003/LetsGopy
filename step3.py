@@ -2,8 +2,8 @@
 import instaloader
 
 # Create an instance of Instaloader class
-bot = instaloader.Instaloader()
-
+bot = instaloader.Instaloader(download_pictures=True,download_video_thumbnails=False,download_videos=False,download_geotags=False,download_comments=False,save_metadata=False)
+bot.login("jingyachen1229", "zxcvb0808")
 # Load a profile from an Instagram handle
 profile = instaloader.Profile.from_username(bot.context, 'python_scripts')
 
