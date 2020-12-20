@@ -110,66 +110,17 @@
                 <div class="article_section">
                     <p class="title">健行筆記相關文章</p>
                     <div class="hiking_articles">
+                        {% for article in articles %}
                         <div class="hiking_article">
-                            <img src="/static/hikingImg.jpg" alt="">
-                            <div class="txt_box">
-                                <p>認識 Tzou 後 對他的登山哲學深深著迷 某種程度受他影響相當大  鬼行黑客 ： 一個人的一日聖稜 by 鄒仔
-                                    享受琢磨他文字的同時 開始嚮往追求自由的靈魂 
-                                    契機來自於 加強版一個人的陽明山東西大縱走 之後與 Tzou 有了交流
-                                    在他的鼓勵 踏上一日奇萊主北 或 一日雪山北峰 甚至 一日南湖大山
-                                    卻始終沒能真正踏上 或真正走完這神聖的稜線
-                                    隨著相關單位的進步 自我接泊也因為加州的購入得以實現 始踏上這意中的旅程 Garmin Connect 記錄
-                                </p>
+                            <div class="img_box">
+                                <img src="{{article.img}}" alt="">
                             </div>
-                        </div>
-                        <div class="hiking_article">
-                            <img src="/static/hikingImg.jpg" alt="">
                             <div class="txt_box">
-                                <p>認識 Tzou 後 對他的登山哲學深深著迷 某種程度受他影響相當大  鬼行黑客 ： 一個人的一日聖稜 by 鄒仔
-                                    享受琢磨他文字的同時 開始嚮往追求自由的靈魂 
-                                    契機來自於 加強版一個人的陽明山東西大縱走 之後與 Tzou 有了交流
-                                    在他的鼓勵 踏上一日奇萊主北 或 一日雪山北峰 甚至 一日南湖大山
-                                    卻始終沒能真正踏上 或真正走完這神聖的稜線
-                                    隨著相關單位的進步 自我接泊也因為加州的購入得以實現 始踏上這意中的旅程 Garmin Connect 記錄
-                                </p>
+                                <p>{{article.name}}</p>
                             </div>
+                            <a href="{{article.link}}" target="_blank" rel="noopener noreferrer"></a>
                         </div>
-                        <div class="hiking_article">
-                            <img src="/static/hikingImg.jpg" alt="">
-                            <div class="txt_box">
-                                <p>認識 Tzou 後 對他的登山哲學深深著迷 某種程度受他影響相當大  鬼行黑客 ： 一個人的一日聖稜 by 鄒仔
-                                    享受琢磨他文字的同時 開始嚮往追求自由的靈魂 
-                                    契機來自於 加強版一個人的陽明山東西大縱走 之後與 Tzou 有了交流
-                                    在他的鼓勵 踏上一日奇萊主北 或 一日雪山北峰 甚至 一日南湖大山
-                                    卻始終沒能真正踏上 或真正走完這神聖的稜線
-                                    隨著相關單位的進步 自我接泊也因為加州的購入得以實現 始踏上這意中的旅程 Garmin Connect 記錄
-                                </p>
-                            </div>
-                        </div>
-                        <div class="hiking_article">
-                            <img src="/static/hikingImg.jpg" alt="">
-                            <div class="txt_box">
-                                <p>認識 Tzou 後 對他的登山哲學深深著迷 某種程度受他影響相當大  鬼行黑客 ： 一個人的一日聖稜 by 鄒仔
-                                    享受琢磨他文字的同時 開始嚮往追求自由的靈魂 
-                                    契機來自於 加強版一個人的陽明山東西大縱走 之後與 Tzou 有了交流
-                                    在他的鼓勵 踏上一日奇萊主北 或 一日雪山北峰 甚至 一日南湖大山
-                                    卻始終沒能真正踏上 或真正走完這神聖的稜線
-                                    隨著相關單位的進步 自我接泊也因為加州的購入得以實現 始踏上這意中的旅程 Garmin Connect 記錄
-                                </p>
-                            </div>
-                        </div>
-                        <div class="hiking_article">
-                            <img src="/static/hikingImg.jpg" alt="">
-                            <div class="txt_box">
-                                <p>認識 Tzou 後 對他的登山哲學深深著迷 某種程度受他影響相當大  鬼行黑客 ： 一個人的一日聖稜 by 鄒仔
-                                    享受琢磨他文字的同時 開始嚮往追求自由的靈魂 
-                                    契機來自於 加強版一個人的陽明山東西大縱走 之後與 Tzou 有了交流
-                                    在他的鼓勵 踏上一日奇萊主北 或 一日雪山北峰 甚至 一日南湖大山
-                                    卻始終沒能真正踏上 或真正走完這神聖的稜線
-                                    隨著相關單位的進步 自我接泊也因為加州的購入得以實現 始踏上這意中的旅程 Garmin Connect 記錄
-                                </p>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </section>
