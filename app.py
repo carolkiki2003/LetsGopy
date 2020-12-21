@@ -21,8 +21,8 @@ def index():
     # mountain="馬望曾呂山"
     # articleList=searchArticle(mountain)
     # print(searchMountain(request.values['city'],request.values['percent']))
-    return render_template('index.html',name=result,citys=cityList,percents=percentList,city=request.values['city'],percent=request.values['percent'])
-  return render_template('index.html',name="",citys=cityList,percents=percentList)
+    return render_template('index.html',name=result,city=request.values['city'],percent=request.values['percent'])
+  return render_template('index.html',name="")
 
 if __name__ == "__main__":
   app.run(debug=True)
