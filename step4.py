@@ -1,3 +1,4 @@
+import os
 from bs4 import BeautifulSoup
 import requests
 from selenium import webdriver
@@ -6,9 +7,12 @@ from selenium.webdriver.chrome.options import Options
 
 def searchArticle(mountain):
     my_options = Options()
+    my_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
     my_options.add_argument("--headless")
-    path = "./chromedriver"
-    driver = webdriver.Chrome(path, options = my_options)
+    my_options.add_argument("--disable-dev-shm-usage")
+    my_options.add_argument("--no-sandbox")
+    # path = "./chromedriver"
+    driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options = my_options)
     driver.get("https://hiking.biji.co/index.php?q=review")
     url = "https://hiking.biji.co/index.php?q=review"
 
