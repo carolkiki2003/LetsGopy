@@ -5,8 +5,8 @@ from step1 import result
 import json
 
 # citys
-with open('citys.json',encoding="utf-8") as json_file:
-  cityList=json.load(json_file)
+# with open('citys.json',encoding="utf-8") as json_file:
+#   cityList=json.load(json_file)
 
 # chance of rain
 percentList=[]
@@ -21,6 +21,7 @@ def index():
     # mountain="馬望曾呂山"
     # articleList=searchArticle(mountain)
     # print(searchMountain(request.values['city'],request.values['percent']))
+    cityList=["臺北市","新北市","桃園市","新竹市","新竹縣","苗栗縣","臺中市","南投縣","嘉義縣","高雄市","屏東縣","宜蘭縣","花蓮縣"]
     return render_template('index.html',name=result,citys=cityList,percents=percentList,city=request.values['city'],percent=request.values['percent'])
   return render_template('index.html',name="",citys=cityList,percents=percentList)
 
