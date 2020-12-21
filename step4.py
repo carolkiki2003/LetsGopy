@@ -61,34 +61,4 @@ def searchArticle(mountain):
             num = i+1
             article={"name":name,"link":link,"img":cover_link}
             article_result.append(article)
-
-    # print("以下是照片")
-    # 爬相簿
-    #driver.get("https://hiking.biji.co/index.php?q=album")
-    #url2 = "https://hiking.biji.co/index.php?q=album"
-    # 爬我們要去的山
-    #search_input = driver.find_element_by_id("keyword_input")
-    #search_input.send_keys(mountain)
-    #search_input.submit()
-    #sleep(2)
-    #改變網址
-    #my_params2 = {"act":"search", "keyword":mountain}
-    #re2 = requests.get(url2, params = my_params2)
-    #soup2 = BeautifulSoup(re2.text, "html.parser")
-    # import os
-    # 找相片五張
-    # photos = soup2.findAll("div", {"class":"inner-img lozad"})
-    # num = 1
-    # if len(photos)==0:
-    #     print("")
-    # elif len(photos)<=5:
-    #     for photo in photos:
-    #         photo_url = photo["data-background-image"]
-    #         print (f"{mountain}_{num}", photo_url, sep = "\n")
-    #         num += 1
-    # else:
-    #     for photo in photos[:5]:
-    #         photo_url = photo["data-background-image"]
-    #         print (f"{mountain}_{num}", photo_url, sep = "\n")
-    #         num += 1
     return article_result
