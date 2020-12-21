@@ -12,6 +12,7 @@ app = Flask(__name__)
 cityList=["臺北市","新北市","桃園市","新竹市","新竹縣","苗栗縣","臺中市","南投縣","嘉義縣","高雄市","屏東縣","宜蘭縣","花蓮縣"]
 
 # chance of rain
+percentList=[]
 for chance in range(0,110,10):
   percentList.append(chance)
 
