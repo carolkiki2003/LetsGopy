@@ -7,7 +7,7 @@ from selenium.webdriver.chrome.options import Options
 def searchArticle(mountain):
     my_options = Options()
     my_options.add_argument("--headless")
-    path = "./chromedriver.exe"
+    path = "./chromedriver"
     driver = webdriver.Chrome(path, options = my_options)
     driver.get("https://hiking.biji.co/index.php?q=review")
     url = "https://hiking.biji.co/index.php?q=review"
