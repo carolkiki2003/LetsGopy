@@ -199,7 +199,7 @@ h1{
         position: relative;
         padding: 10px;
         border: 1px solid #dbdbdb;
-        width: calc(50% - 10px);
+        width: calc((100% - 20px) / 3);
         box-sizing: border-box;
         margin-bottom: 10px;
         display: flex;
@@ -239,7 +239,7 @@ h1{
             left: 0;
             z-index: 2;
         }
-        &:nth-child(odd){
+        &:not(:nth-child(3n+3)){
             margin-right: 10px;
         }
         &:hover{
@@ -281,7 +281,7 @@ h1{
     .hiking_articles{
         .hiking_article{
             width: 100%;
-            &:nth-child(odd){
+            &:not(:nth-child(3n+3)){
                 margin-right: 0px;
             }
             .txt_box{

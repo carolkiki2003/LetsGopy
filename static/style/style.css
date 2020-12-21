@@ -256,7 +256,7 @@ h1::before {
   position: relative;
   padding: 10px;
   border: 1px solid #dbdbdb;
-  width: calc(50% - 10px);
+  width: calc((100% - 20px) / 3);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin-bottom: 10px;
@@ -315,7 +315,7 @@ h1::before {
   z-index: 2;
 }
 
-.hiking_articles .hiking_article:nth-child(odd) {
+.hiking_articles .hiking_article:not(:nth-child(3n+3)) {
   margin-right: 10px;
 }
 
@@ -358,7 +358,7 @@ h1::before {
   .hiking_articles .hiking_article {
     width: 100%;
   }
-  .hiking_articles .hiking_article:nth-child(odd) {
+  .hiking_articles .hiking_article:not(:nth-child(3n+3)) {
     margin-right: 0px;
   }
   .hiking_articles .hiking_article .txt_box > p {
