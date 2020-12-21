@@ -5,7 +5,7 @@ from step1 import result
 import json
 
 # citys
-with open('citys.json',encoding="utf-8") as json_file:
+with open('./citys.json',encoding="utf-8") as json_file:
   cityList=json.load(json_file)
 
 # chance of rain
