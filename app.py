@@ -12,9 +12,8 @@ app = Flask(__name__)
 cityList=["臺北市","新北市","桃園市","新竹市","新竹縣","苗栗縣","臺中市","南投縣","嘉義縣","高雄市","屏東縣","宜蘭縣","花蓮縣"]
 
 # chance of rain
-percentList=[0,1,2]
-# for chance in range(0,110,10):
-#   percentList.append(chance)
+for chance in range(0,110,10):
+  percentList.append(chance)
 
 @app.route("/",methods=['POST','GET'])
 def index():
@@ -22,8 +21,8 @@ def index():
     # mountain="馬望曾呂山"
     # articleList=searchArticle(mountain)
     # print(searchMountain(request.values['city'],request.values['percent']))
-    return render_template('index.html',name=result,citys="cityList",percents="percentList",city=request.values['city'],percent=request.values['percent'])
-  return render_template('index.html',name="",citys="cityList",percents="percentList")
+    return render_template('index.html',name=result,citys=cityList,percents=percentList,city=request.values['city'],percent=request.values['percent'])
+  return render_template('index.html',name="",citys=cityList,percents=percentList)
 
 if __name__ == "__main__":
   app.run(debug=True)
