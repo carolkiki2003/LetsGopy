@@ -26,7 +26,7 @@
                     <select name="percent" id="">
                         <option value="" disabled selected hidden>降雨機率</option>
                         {% for percent in percents %}
-                        <option value="{{percent}}%">{{percent}}％以下</option>
+                        <option value="{{percent}}">{{percent}}％以下</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -37,7 +37,7 @@
         <p class="aLine">請完成篩選</p>
         {% else %}
         <div class="result_content">
-            <p class="result_txt">以下為從<a href="https://www.cwb.gov.tw/V8/C/L/Mountain/Mountain.html" target="_blank" rel="noopener noreferrer">登山 | 交通部中央氣象局</a>搜尋符合條件<span>{{city}}</span>和降雨機率為<span>{{percent}}</span>以下的推薦地點：</p>
+            <p class="result_txt">以下為從<a href="https://www.cwb.gov.tw/V8/C/L/Mountain/Mountain.html" target="_blank" rel="noopener noreferrer">登山 | 交通部中央氣象局</a>搜尋符合條件<span>{{city}}</span>和降雨機率為<span>{{percent}}%</span>以下的推薦地點：</p>
             <p class="tags">
                 {% for mountain in mountains %}
                 <span class="tag">{{mountain}}</span>

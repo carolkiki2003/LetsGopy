@@ -2,7 +2,6 @@ from flask import Flask,render_template,request
 from step2 import searchMountain
 from step4 import searchArticle
 import json
-
 app = Flask(__name__)
 
 # citys
@@ -19,7 +18,8 @@ def index():
   if request.method =='POST':
     mountain="馬望曾呂山"
     # articleList=searchArticle(mountain)
-    mountainList=searchMountain(request.values['city'],request.values['percent'])
+    mountainList=searchMountain(request.values['city'],int(request.values['percent']))
+    print(mountainList)
     return render_template('index.html',name='result',citys=cityList,percents=percentList,city=request.values['city'],percent=request.values['percent'],mountains=mountainList)
   return render_template('index.html',name="",citys=cityList,percents=percentList)
 

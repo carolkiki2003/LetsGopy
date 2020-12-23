@@ -9,13 +9,13 @@ from selenium.webdriver.common.by import By
 def searchMountain(county,rain):
     my_options = Options()
     my_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
-    my_options.add_argument("--headless")
-    my_options.add_argument("--disable-dev-shm-usage")
-    my_options.add_argument("--no-sandbox")
+    # my_options.add_argument("--headless")
+    # my_options.add_argument("--disable-dev-shm-usage")
+    # my_options.add_argument("--no-sandbox")
     # path = "./chromedriver"
     driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options = my_options)
     findpage = driver.get("https://www.cwb.gov.tw/V8/C/L/Mountain/Mountain.html")
-
+    
     n = 1
     mountain_lst=[]
     weather_dict={}
