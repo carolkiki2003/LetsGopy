@@ -16,11 +16,14 @@ for chance in range(0,110,10):
 @app.route("/",methods=['POST','GET'])
 def index():
   if request.method =='POST':
-    mountain="馬望曾呂山"
-    # articleList=searchArticle(mountain)
     mountainList=searchMountain(request.values['city'],int(request.values['percent']))
-    print(mountainList)
-    return render_template('index.html',name='result',citys=cityList,percents=percentList,city=request.values['city'],percent=request.values['percent'],mountains=mountainList)
+    newlist = []
+    for mountain in mountainList.keys():
+        newlist.append(mountain)
+    articleList=searchArticle(newlist[0])
+    # for mountain in mountainList.keys():
+    #   articleList.extend(searchArticle(str(mountain)))
+    return render_template('index.html',name='result',citys=cityList,percents=percentList,city=request.values['city'],percent=request.values['percent'],mountains=mountainList,articles=articleList)
   return render_template('index.html',name="",citys=cityList,percents=percentList)
 
 if __name__ == "__main__":
