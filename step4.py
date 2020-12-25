@@ -11,8 +11,8 @@ def searchArticle(mountain):
     my_options.add_argument("--headless")
     my_options.add_argument("--disable-dev-shm-usage")
     my_options.add_argument("--no-sandbox")
-    path = "./chromedriver"
-    # path= executable_path=os.environ.get("CHROMEDRIVER_PATH")
+    # path = "./chromedriver"
+    path= executable_path=os.environ.get("CHROMEDRIVER_PATH")
     driver = webdriver.Chrome(path, options = my_options)
     driver.get("https://hiking.biji.co/index.php?q=review")
     url = "https://hiking.biji.co/index.php?q=review"
