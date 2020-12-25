@@ -27,7 +27,9 @@ def index():
     articleList=searchArticle(newlist[0])
     # for mountain in mountainList.keys():
     #   articleList.extend(searchArticle(str(mountain)))
-    return render_template('index.html',name='result',citys=cityList,percents=percentList,city=request.values['city'],percent=request.values['percent'],mountains=mountainList,articles=articleList)
+    mountain=newlist[0]
+    temperature=mountainList[mountain]
+    return render_template('index.html',name='result',citys=cityList,percents=percentList,city=request.values['city'],percent=request.values['percent'],mountains=mountainList,articles=articleList,mountain=mountain,temperature=temperature)
   return render_template('index.html',name="",citys=cityList,percents=percentList)
 
 if __name__ == "__main__":

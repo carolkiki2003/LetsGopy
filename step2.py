@@ -13,7 +13,10 @@ def searchMountain(county,rain):
     my_options.add_argument("--disable-dev-shm-usage")
     my_options.add_argument("--no-sandbox")
     my_options.add_argument("window-size=1920,1080")
+    # local測試driver path
+    # [Mac]
     # path = "./chromedriver"
+    # [windows]
     # path = "./chromedriver.exe"
     path=executable_path=os.environ.get("CHROMEDRIVER_PATH")
     driver = webdriver.Chrome(path, options = my_options)
